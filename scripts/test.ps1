@@ -12,14 +12,14 @@ catch {
     throw "Unable to run the task script - please check if it's running locally and try again. Original error: $($_)"
 }
 
-if (Test-Path -Path "$PWD/result.json") { 
+if (Test-Path -Path "C:\Users\orest\Desktop\devops\azure_task_7_work_with_objects_in_powershell\result.json") {
     Write-Host "`u{2705} Checked if 'result.json' was created after running task script - OK"
 } else { 
     throw "Unable to find file 'result.json'. Please make sure that you are saving the result to the file in your script and try again." 
 }
 
 try {
-    $regions = Get-Content "C:\Users\orest\Desktop\devops\azure_task_7_work_with_objects_in_powershell\result.json" | ConvertFrom-Json 
+    $regions = Get-Content "C:\Users\orest\Desktop\devops\azure_task_7_work_with_objects_in_powershell\result.json" | ConvertFrom-Json
 }
 catch {
     throw "Unable to read regions data from file 'result.json'. Please check if script saves data in the json format and try again"
