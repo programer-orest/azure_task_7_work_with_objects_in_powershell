@@ -5,8 +5,9 @@ $result_file = @()
 foreach ($currentItemName in $files) {
     $variable = Get-Content $currentItemName | ConvertFrom-Json
     $output_data = $variable
-    if ($output_data.Name -eq 'Standard_B2pts_v2') {
-      $result_file += $currentItemName.BaseName
-    }
+    foreach($item in $output_data)
+      if ($item.Name -eq 'Standard_B2pts_v2') {
+        $result_file += $currentItemName.BaseName
+      }
 }
 $result_file | ConvertTo-Json | Out-File -Path ./result.json
