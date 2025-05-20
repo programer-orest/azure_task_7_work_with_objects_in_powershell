@@ -19,7 +19,7 @@ if (Test-Path -Path "$PWD/result.json") {
 }
 
 try {
-    $regions = Get-Content "$PWD/result.json" | ConvertFrom-Json 
+    $regions = Get-Content "C:\Users\orest\Desktop\devops\azure_task_7_work_with_objects_in_powershell\result.json" | ConvertFrom-Json 
 }
 catch {
     throw "Unable to read regions data from file 'result.json'. Please check if script saves data in the json format and try again"
